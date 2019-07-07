@@ -20,3 +20,10 @@ node {
     stage('deploy to prod')
     echo "deploying to production"
 }
+node{
+    stage ('package')
+    {
+      withMaven(mvn:'maven')
+        echo'Packaging'
+    }
+}
